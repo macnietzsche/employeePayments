@@ -138,7 +138,7 @@
       "payment_amount_on_weekends": 30
     },
     {
-      "start_time": 630,
+      "start_time": 600,
       "end_time": 2400,
       "payment_amount_on_weekdays": 25,
       "payment_amount_on_weekends": 30
