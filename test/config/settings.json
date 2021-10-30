@@ -143,5 +143,125 @@
       "payment_amount_on_weekdays": 25,
       "payment_amount_on_weekends": 30
     }
+  ],
+  "payment_config_unsorted_case1": [
+    {
+      "start_time": 901,
+      "end_time": 1800,
+      "payment_amount_on_weekdays": 25,
+      "payment_amount_on_weekends": 30
+    },
+    {
+      "start_time": 1,
+      "end_time": 900,
+      "payment_amount_on_weekdays": 25,
+      "payment_amount_on_weekends": 30
+    },
+    {
+      "start_time": 1801,
+      "end_time": 2400,
+      "payment_amount_on_weekdays": 25,
+      "payment_amount_on_weekends": 30
+    }
+  ],
+  "payment_config_sorted_case1": [
+    {
+      "start_time": 1,
+      "end_time": 900,
+      "payment_amount_on_weekdays": 25,
+      "payment_amount_on_weekends": 30
+    },
+    {
+      "start_time": 901,
+      "end_time": 1800,
+      "payment_amount_on_weekdays": 25,
+      "payment_amount_on_weekends": 30
+    },
+    {
+      "start_time": 1801,
+      "end_time": 2400,
+      "payment_amount_on_weekdays": 25,
+      "payment_amount_on_weekends": 30
+    }
+  ],
+  "payment_config_unsorted_case2": [
+    {
+      "start_time": 1801,
+      "end_time": 2400,
+      "payment_amount_on_weekdays": 25,
+      "payment_amount_on_weekends": 30
+    },
+    {
+      "start_time": 901,
+      "end_time": 1800,
+      "payment_amount_on_weekdays": 25,
+      "payment_amount_on_weekends": 30
+    },
+    {
+      "start_time": 1,
+      "end_time": 900,
+      "payment_amount_on_weekdays": 25,
+      "payment_amount_on_weekends": 30
+    }
+  ],
+  "payment_config_sorted_case2": [
+    {
+      "start_time": 1,
+      "end_time": 900,
+      "payment_amount_on_weekdays": 25,
+      "payment_amount_on_weekends": 30
+    },
+    {
+      "start_time": 901,
+      "end_time": 1800,
+      "payment_amount_on_weekdays": 25,
+      "payment_amount_on_weekends": 30
+    },
+    {
+      "start_time": 1801,
+      "end_time": 2400,
+      "payment_amount_on_weekdays": 25,
+      "payment_amount_on_weekends": 30
+    }
+  ],
+  "payment_config_unsorted_case3": [
+    {
+      "start_time": 901,
+      "end_time": 1800,
+      "payment_amount_on_weekdays": 25,
+      "payment_amount_on_weekends": 30
+    },
+    {
+      "start_time": 1,
+      "end_time": 900,
+      "payment_amount_on_weekdays": 25,
+      "payment_amount_on_weekends": 30
+    },
+    {
+      "start_time": 1801,
+      "end_time": 2400,
+      "payment_amount_on_weekdays": 25,
+      "payment_amount_on_weekends": 30
+    }
+  ],
+  "payment_config_sorted_case3": [
+    {
+      "start_time": 1,
+      "end_time": 900,
+      "payment_amount_on_weekdays": 25,
+      "payment_amount_on_weekends": 30
+    },
+    {
+      "start_time": 901,
+      "end_time": 1800,
+      "payment_amount_on_weekdays": 25,
+      "payment_amount_on_weekends": 30
+    },
+    {
+      "start_time": 1801,
+      "end_time": 2400,
+      "payment_amount_on_weekdays": 25,
+      "payment_amount_on_weekends": 30
+    }
   ]
 }
