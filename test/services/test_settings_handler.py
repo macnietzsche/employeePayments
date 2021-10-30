@@ -31,5 +31,21 @@ class TestSettingsHandler(TestCase):
         with self.assertRaises(Exception):
             SettingsHandler(setting)
 
+    def test_setting_has_overlapping_time_intervals_case1(self):
+        setting = settings_data["payment_config_overlapping_time_intervals_case1"]
+        with self.assertRaises(Exception):
+            SettingsHandler(setting)
+
+    def test_setting_has_overlapping_time_intervals_case2(self):
+        setting = settings_data["payment_config_overlapping_time_intervals_case3"]
+        with self.assertRaises(Exception):
+            SettingsHandler(setting)
+    
+    def test_setting_has_overlapping_time_intervals_case3(self):
+        setting = settings_data["payment_config_overlapping_time_intervals_case3"]
+        with self.assertRaises(Exception):
+            SettingsHandler(setting)
+        
+
             
         
