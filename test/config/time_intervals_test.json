@@ -1,0 +1,184 @@
+{
+  "overlapping_time_intervals_case1": [
+    {
+      "start_time": 1,
+      "end_time": 900
+    },
+    {
+      "start_time": 830,
+      "end_time": 1800
+    },
+    {
+      "start_time": 1801,
+      "end_time": 2400
+    }
+  ],
+  "overlapping_time_intervals_case2": [
+    {
+      "start_time": 1,
+      "end_time": 900
+    },
+    {
+      "start_time": 830,
+      "end_time": 1800
+    },
+    {
+      "start_time": 1801,
+      "end_time": 2
+    }
+  ],
+  "overlapping_time_intervals_case3": [
+    {
+      "start_time": 2358,
+      "end_time": 900
+    },
+    {
+      "start_time": 901,
+      "end_time": 1800
+    },
+    {
+      "start_time": 1801,
+      "end_time": 2400
+    }
+  ],
+  "overlapping_time_intervals_case4": [
+    {
+      "start_time": 1,
+      "end_time": 900
+    },
+    {
+      "start_time": 901,
+      "end_time": 1800
+    },
+    {
+      "start_time": 600,
+      "end_time": 2400
+    }
+  ],
+  "unsorted_case1": [
+    {
+      "start_time": 901,
+      "end_time": 1800
+    },
+    {
+      "start_time": 1,
+      "end_time": 900
+    },
+    {
+      "start_time": 1801,
+      "end_time": 2400
+    }
+  ],
+  "sorted_case1": [
+    {
+      "start_time": 1,
+      "end_time": 900
+    },
+    {
+      "start_time": 901,
+      "end_time": 1800
+    },
+    {
+      "start_time": 1801,
+      "end_time": 2400
+    }
+  ],
+  "unsorted_case2": [
+    {
+      "start_time": 1801,
+      "end_time": 2400
+    },
+    {
+      "start_time": 901,
+      "end_time": 1800
+    },
+    {
+      "start_time": 1,
+      "end_time": 900
+    }
+  ],
+  "sorted_case2": [
+    {
+      "start_time": 1,
+      "end_time": 900
+    },
+    {
+      "start_time": 901,
+      "end_time": 1800
+    },
+    {
+      "start_time": 1801,
+      "end_time": 2400
+    }
+  ],
+  "unsorted_case3": [
+    {
+      "start_time": 901,
+      "end_time": 1800
+    },
+    {
+      "start_time": 1,
+      "end_time": 900
+    },
+    {
+      "start_time": 1801,
+      "end_time": 2400
+    }
+  ],
+  "sorted_case3": [
+    {
+      "start_time": 1,
+      "end_time": 900
+    },
+    {
+      "start_time": 901,
+      "end_time": 1800
+    },
+    {
+      "start_time": 1801,
+      "end_time": 2400
+    }
+  ],
+  "missing_time_segments_case1": [
+    {
+      "start_time": 1,
+      "end_time": 900
+    },
+    {
+      "start_time": 902,
+      "end_time": 1800
+    },
+    {
+      "start_time": 1801,
+      "end_time": 2400
+    }
+  ],
+  "missing_time_segments_case2": [
+    {
+      "start_time": 2,
+      "end_time": 900
+    },
+    {
+      "start_time": 901,
+      "end_time": 1800
+    },
+    {
+      "start_time": 1801,
+      "end_time": 2400
+    }
+  ],
+  "missing_time_segments_case3": [
+    {
+      "start_time": 1,
+      "end_time": 900
+    },
+    {
+      "start_time": 901,
+      "end_time": 1800
+    },
+    {
+      "start_time": 1801,
+      "end_time": 2359
+    }
+  ]
+}
