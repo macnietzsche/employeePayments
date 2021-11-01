@@ -61,11 +61,65 @@ class TestTimeIntervalHandler(TestCase):
             TimeIntervalHandler(time_interval,True)
 
     def test_find_time_segment_by_time(self):
+        # Case 1
         time_interval = time_interval_data["correct_time_segments_case1"]
+        time_intervals_instance = TimeIntervalHandler(time_interval,True)
+        # Case 1: Test 1
         time = 1200
         expected_time_segment_to_be_found = 1
-
-        time_intervals_instance = TimeIntervalHandler(time_interval,True)
         time_segment_found = time_intervals_instance.find_time_segment(time)
+        self.assertEqual(expected_time_segment_to_be_found,time_segment_found)
 
+        # Case 1: Test 2
+        time = 1900
+        expected_time_segment_to_be_found = 2
+        time_segment_found = time_intervals_instance.find_time_segment(time)
+        self.assertEqual(expected_time_segment_to_be_found,time_segment_found)
+
+        # Case 1: Test 3
+        time = 300
+        expected_time_segment_to_be_found = 0
+        time_segment_found = time_intervals_instance.find_time_segment(time)
+        self.assertEqual(expected_time_segment_to_be_found,time_segment_found)
+
+        # Case 2
+        time_interval = time_interval_data["correct_time_segments_case2"]
+        time_intervals_instance = TimeIntervalHandler(time_interval,True)
+        # Case 2: Test 1
+        time = 1920
+        expected_time_segment_to_be_found = 3
+        time_segment_found = time_intervals_instance.find_time_segment(time)
+        self.assertEqual(expected_time_segment_to_be_found,time_segment_found)
+
+        # Case 2: Test 2
+        time = 1500
+        expected_time_segment_to_be_found = 1
+        time_segment_found = time_intervals_instance.find_time_segment(time)
+        self.assertEqual(expected_time_segment_to_be_found,time_segment_found)
+
+        # Case 3: Test 3
+        time = 1730
+        expected_time_segment_to_be_found = 2
+        time_segment_found = time_intervals_instance.find_time_segment(time)
+        self.assertEqual(expected_time_segment_to_be_found,time_segment_found)
+
+        #Case 3
+        time_interval = time_interval_data["correct_time_segments_case3"]
+        time_intervals_instance = TimeIntervalHandler(time_interval,True)
+        # Case 3: Test 1
+        time = 1920
+        expected_time_segment_to_be_found = 4
+        time_segment_found = time_intervals_instance.find_time_segment(time)
+        self.assertEqual(expected_time_segment_to_be_found,time_segment_found)
+
+        # Case 3: Test 2
+        time = 1300
+        expected_time_segment_to_be_found = 2
+        time_segment_found = time_intervals_instance.find_time_segment(time)
+        self.assertEqual(expected_time_segment_to_be_found,time_segment_found)
+
+         # Case 3: Test 3
+        time = 1000
+        expected_time_segment_to_be_found = 1
+        time_segment_found = time_intervals_instance.find_time_segment(time)
         self.assertEqual(expected_time_segment_to_be_found,time_segment_found)
