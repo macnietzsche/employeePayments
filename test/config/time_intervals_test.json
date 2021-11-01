@@ -181,6 +181,48 @@
       "end_time": 2359
     }
   ],
+  "invalid_time_values_case1": [
+    {
+      "start_time": 1,
+      "end_time": 998
+    },
+    {
+      "start_time": 999,
+      "end_time": 1800
+    },
+    {
+      "start_time": 1801,
+      "end_time": 2400
+    }
+  ],
+  "invalid_time_values_case2": [
+    {
+      "start_time": 1,
+      "end_time": 900
+    },
+    {
+      "start_time": 901,
+      "end_time": 1899
+    },
+    {
+      "start_time": 1900,
+      "end_time": 2400
+    }
+  ],
+  "invalid_time_values_case3": [
+    {
+      "start_time": 1,
+      "end_time": 867
+    },
+    {
+      "start_time": 868,
+      "end_time": 1800
+    },
+    {
+      "start_time": 1801,
+      "end_time": 2400
+    }
+  ],
   "correct_time_segments_case1": [
     {
       "start_time": 1,
@@ -206,20 +248,20 @@
     },
     {
       "start_time": 1624,
-      "end_time": 1800
+      "end_time": 1759
     },
     {
-      "start_time": 1801,
+      "start_time": 1800,
       "end_time": 2400
     }
   ],
   "correct_time_segments_case3": [
     {
       "start_time": 1,
-      "end_time": 829
+      "end_time": 859
     },
     {
-      "start_time": 830,
+      "start_time": 900,
       "end_time": 1200
     },
     {

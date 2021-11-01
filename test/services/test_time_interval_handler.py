@@ -60,6 +60,20 @@ class TestTimeIntervalHandler(TestCase):
         with self.assertRaises(Exception):
             TimeIntervalHandler(time_interval,True)
 
+    def test_intervals_have_invalid_time_values(self):
+        time_interval = time_interval_data["invalid_time_values_case1"]
+        with self.assertRaises(Exception):
+            TimeIntervalHandler(time_interval,True)
+
+        time_interval = time_interval_data["invalid_time_values_case2"]
+        with self.assertRaises(Exception):
+            TimeIntervalHandler(time_interval,True)
+
+        time_interval = time_interval_data["invalid_time_values_case3"]
+        with self.assertRaises(Exception):
+            TimeIntervalHandler(time_interval,True)
+
+
     def test_find_time_segment_by_time(self):
         # Case 1
         time_interval = time_interval_data["correct_time_segments_case1"]
