@@ -2,7 +2,7 @@ from json import load as json_load
 from unittest import TestCase;
 from services.time_interval_handler import TimeIntervalHandler
 
-with open("test/config/time_intervals_test.json") as file:
+with open("test/input_files/time_intervals_test.json") as file:
         time_interval_data = json_load(file)
 
 class TestTimeIntervalHandler(TestCase):
