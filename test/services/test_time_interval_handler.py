@@ -137,3 +137,10 @@ class TestTimeIntervalHandler(TestCase):
         expected_time_segment_to_be_found = 1
         time_segment_found = time_intervals_instance.find_time_segment(time)
         self.assertEqual(expected_time_segment_to_be_found,time_segment_found)
+
+    def test_time_diff_in_hours(self):
+        start_time = 1500
+        end_time = 1600
+        expected_time_diff_in_hours = 1
+        time_diff_in_hours = TimeIntervalHandler.time_diff_in_hours(start_time,end_time)
+        self.assertEqual(expected_time_diff_in_hours,time_diff_in_hours)

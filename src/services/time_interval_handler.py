@@ -19,7 +19,7 @@ class TimeIntervalHandler():
         for setting in time_intervals:
             start_time = setting[START_TIME_KEY]   
             end_time = setting[END_TIME_KEY]
-            if not (self.__is_time_value_valid(start_time) and self.__is_time_value_valid(end_time)):
+            if not (self.is_time_value_valid(start_time) and self.is_time_value_valid(end_time)):
                 raise Exception("Time value is not valid")
 
             if not (start_time<end_time):
@@ -39,7 +39,7 @@ class TimeIntervalHandler():
             last_time_segment = sorted_settings[-1]
             for sorted_setting in sorted_settings:
                 if last_time_segment:
-                    end_time_to_be_compared = self.__sum_minutes_to_time(last_time_segment[END_TIME_KEY],1)
+                    end_time_to_be_compared = self.sum_minutes_to_time(last_time_segment[END_TIME_KEY],1)
                     if not end_time_to_be_compared==sorted_setting[START_TIME_KEY]:
                         raise Exception("Time segments must be continous")     
                 last_time_segment = sorted_setting
@@ -49,7 +49,8 @@ class TimeIntervalHandler():
     def find_time_segment(self, time):
         return binarySearch(self.validated_time_intervals,time,START_TIME_KEY,END_TIME_KEY)
 
-    def __sum_minutes_to_time(self,time, minutes_to_be_added):
+    @staticmethod
+    def sum_minutes_to_time(time, minutes_to_be_added):
         hours=time//100
         minutes=time%100
 
@@ -64,7 +65,8 @@ class TimeIntervalHandler():
 
         return result
 
-    def __is_time_value_valid(self, time):
+    @staticmethod
+    def is_time_value_valid(time):
         hours=time//100
         minutes=time%100
 
@@ -75,3 +77,7 @@ class TimeIntervalHandler():
             return False
         
         return True
+
+    @staticmethod
+    def time_diff_in_hours(start_time, end_time):
+        None
