@@ -1,4 +1,3 @@
-from datetime import time
 from services.array_methods import binarySearch
 
 MIN_TIME = 1
@@ -51,7 +50,6 @@ class TimeIntervalHandler():
     def find_time_segment(self, time):
         return binarySearch(self.validated_time_intervals,time,START_TIME_KEY,END_TIME_KEY)
 
-  
     def sum_minutes_to_time(self, time, minutes_to_be_added):
         hours=time//100
         minutes=time%100
@@ -67,7 +65,6 @@ class TimeIntervalHandler():
 
         return result
 
-    
     def is_time_value_valid(self, time):
         hours=time//100
         minutes=time%100
