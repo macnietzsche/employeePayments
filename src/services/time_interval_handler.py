@@ -1,3 +1,4 @@
+from datetime import time
 from services.array_methods import binarySearch
 
 MIN_TIME = 1
@@ -5,7 +6,7 @@ MAX_TIME = 2400
 START_TIME_KEY = 'start_time'
 END_TIME_KEY = 'end_time'
 class TimeIntervalHandler():
-    def __init__(self,time_intervals, segments_must_be_continuous = False):
+    def __init__(self,time_intervals = None, segments_must_be_continuous = False):
         self.segments_must_be_continuous = segments_must_be_continuous
         self.validated_time_intervals = time_intervals
     
@@ -15,6 +16,7 @@ class TimeIntervalHandler():
     
     @validated_time_intervals.setter
     def validated_time_intervals(self,time_intervals):
+        if not time_intervals: return
         validated_settings = []
         for setting in time_intervals:
             start_time = setting[START_TIME_KEY]   
@@ -49,8 +51,8 @@ class TimeIntervalHandler():
     def find_time_segment(self, time):
         return binarySearch(self.validated_time_intervals,time,START_TIME_KEY,END_TIME_KEY)
 
-    @staticmethod
-    def sum_minutes_to_time(time, minutes_to_be_added):
+  
+    def sum_minutes_to_time(self, time, minutes_to_be_added):
         hours=time//100
         minutes=time%100
 
@@ -65,8 +67,8 @@ class TimeIntervalHandler():
 
         return result
 
-    @staticmethod
-    def is_time_value_valid(time):
+    
+    def is_time_value_valid(self, time):
         hours=time//100
         minutes=time%100
 
@@ -78,6 +80,20 @@ class TimeIntervalHandler():
         
         return True
 
-    @staticmethod
-    def time_diff_in_hours(start_time, end_time):
-        None
+    def time_diff_in_hours(self, start_time, end_time):
+        if not (self.is_time_value_valid(start_time) and self.is_time_value_valid(end_time)) or start_time > end_time:
+            return -1
+    
+        start_hour=start_time//100
+        start_minutes=start_time%100
+
+        end_hour=end_time//100
+        end_minutes=end_time%100
+
+        hour_diff=end_hour-start_hour
+        min_diff=end_minutes-start_minutes
+        if min_diff<0:
+            min_diff+=60
+            hour_diff-=1
+
+        return hour_diff+min_diff/60

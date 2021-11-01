@@ -139,8 +139,41 @@ class TestTimeIntervalHandler(TestCase):
         self.assertEqual(expected_time_segment_to_be_found,time_segment_found)
 
     def test_time_diff_in_hours(self):
+
+        time_intervals_instance = TimeIntervalHandler()
+
         start_time = 1500
         end_time = 1600
         expected_time_diff_in_hours = 1
-        time_diff_in_hours = TimeIntervalHandler.time_diff_in_hours(start_time,end_time)
+        time_diff_in_hours = time_intervals_instance.time_diff_in_hours(start_time,end_time)
+        self.assertEqual(expected_time_diff_in_hours,time_diff_in_hours)
+
+        start_time = 1659
+        end_time = 1700
+        expected_time_diff_in_hours = 1/60
+        time_diff_in_hours = time_intervals_instance.time_diff_in_hours(start_time,end_time)
+        self.assertEqual(expected_time_diff_in_hours,time_diff_in_hours)
+
+        start_time = 1530
+        end_time = 1600
+        expected_time_diff_in_hours = 0.5
+        time_diff_in_hours = time_intervals_instance.time_diff_in_hours(start_time,end_time)
+        self.assertEqual(expected_time_diff_in_hours,time_diff_in_hours)
+
+        start_time = 1200
+        end_time = 1433
+        expected_time_diff_in_hours = 2 + 33/60
+        time_diff_in_hours = time_intervals_instance.time_diff_in_hours(start_time,end_time)
+        self.assertEqual(expected_time_diff_in_hours,time_diff_in_hours)
+
+        start_time = 1400
+        end_time = 1200
+        expected_time_diff_in_hours = -1
+        time_diff_in_hours = time_intervals_instance.time_diff_in_hours(start_time,end_time)
+        self.assertEqual(expected_time_diff_in_hours,time_diff_in_hours)
+
+        start_time = 1499
+        end_time = 1600
+        expected_time_diff_in_hours = -1
+        time_diff_in_hours = time_intervals_instance.time_diff_in_hours(start_time,end_time)
         self.assertEqual(expected_time_diff_in_hours,time_diff_in_hours)
