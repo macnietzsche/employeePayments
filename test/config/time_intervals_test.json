@@ -180,5 +180,59 @@
       "start_time": 1801,
       "end_time": 2359
     }
+  ],
+  "correct_time_segments_case1": [
+    {
+      "start_time": 1,
+      "end_time": 900
+    },
+    {
+      "start_time": 901,
+      "end_time": 1800
+    },
+    {
+      "start_time": 1801,
+      "end_time": 2400
+    }
+  ],
+  "correct_time_segments_case2": [
+    {
+      "start_time": 1,
+      "end_time": 829
+    },
+    {
+      "start_time": 830,
+      "end_time": 1623
+    },
+    {
+      "start_time": 1624,
+      "end_time": 1800
+    },
+    {
+      "start_time": 1801,
+      "end_time": 2400
+    }
+  ],
+  "correct_time_segments_case3": [
+    {
+      "start_time": 1,
+      "end_time": 829
+    },
+    {
+      "start_time": 830,
+      "end_time": 1200
+    },
+    {
+      "start_time": 1201,
+      "end_time": 1623
+    },
+    {
+      "start_time": 1624,
+      "end_time": 1800
+    },
+    {
+      "start_time": 1801,
+      "end_time": 2400
+    }
   ]
 }

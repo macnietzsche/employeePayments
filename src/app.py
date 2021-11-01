@@ -1,10 +1,10 @@
 from json import load as json_load
-from services.settings_handler import SettingsHandler
+from services.time_interval_handler import TimeIntervalHandler
 
 if __name__ == '__main__':
-    with open("test/config/settings.json") as file:
+    with open("test/config/time_intervals_test.json") as file:
         settings_data = json_load(file)
 
-    setting = settings_data["payment_config_unsorted_case1"]
-    SettingsHandler(setting)    
+    setting = settings_data["correct_time_segments_case1"]
+    TimeIntervalHandler(setting,True)    
     print("hello world")

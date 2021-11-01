@@ -1,3 +1,5 @@
+MIN_TIME = 1
+MAX_TIME = 2400
 class TimeIntervalHandler():
     def __init__(self,time_intervals, segments_must_be_continuous = False):
         self.segments_must_be_continuous = segments_must_be_continuous
@@ -30,12 +32,15 @@ class TimeIntervalHandler():
             last_time_segment = sorted_settings[-1]
             for sorted_setting in sorted_settings:
                 if last_time_segment:
-                    end_time_to_be_compared = last_time_segment["end_time"]
-                    if end_time_to_be_compared >= 2400:
-                        end_time_to_be_compared = 0
+                    end_time_to_be_compared = last_time_segment["end_time"] + 1
+                    if end_time_to_be_compared > MAX_TIME:
+                        end_time_to_be_compared = MIN_TIME
 
-                    if not end_time_to_be_compared+1==sorted_setting['start_time']:
+                    if not end_time_to_be_compared==sorted_setting['start_time']:
                         raise Exception("Time segments must be continous")     
                 last_time_segment = sorted_setting
 
         self._validated_time_intervals = sorted_settings
+
+    def find_time_segment(self, time):
+        None

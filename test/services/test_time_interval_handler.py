@@ -24,7 +24,7 @@ class TestTimeIntervalHandler(TestCase):
         unsorted_time_interval = time_interval_data["unsorted_case1"]
         expected_sorted_time_interval = time_interval_data["sorted_case1"]
 
-        time_intervals_instance = TimeIntervalHandler(unsorted_time_interval,True)
+        time_intervals_instance = TimeIntervalHandler(unsorted_time_interval)
         sorted_time_interval = time_intervals_instance.validated_time_intervals
 
         self.assertEqual(sorted_time_interval,expected_sorted_time_interval)
@@ -33,7 +33,7 @@ class TestTimeIntervalHandler(TestCase):
         unsorted_time_interval = time_interval_data["unsorted_case2"]
         expected_sorted_time_interval = time_interval_data["sorted_case2"]
 
-        time_intervals_instance = TimeIntervalHandler(unsorted_time_interval,True)
+        time_intervals_instance = TimeIntervalHandler(unsorted_time_interval)
         sorted_time_interval = time_intervals_instance.validated_time_intervals
 
         self.assertEqual(sorted_time_interval,expected_sorted_time_interval)
@@ -42,7 +42,7 @@ class TestTimeIntervalHandler(TestCase):
         unsorted_time_interval = time_interval_data["unsorted_case3"]
         expected_sorted_time_interval = time_interval_data["sorted_case3"]
 
-        time_intervals_instance = TimeIntervalHandler(unsorted_time_interval,True)
+        time_intervals_instance = TimeIntervalHandler(unsorted_time_interval)
         sorted_time_interval = time_intervals_instance.validated_time_intervals
 
         self.assertEqual(sorted_time_interval,expected_sorted_time_interval)
@@ -59,3 +59,13 @@ class TestTimeIntervalHandler(TestCase):
         time_interval = time_interval_data["missing_time_segments_case3"]
         with self.assertRaises(Exception):
             TimeIntervalHandler(time_interval,True)
+
+    def test_find_time_segment_by_time(self):
+        time_interval = time_interval_data["correct_time_segments_case1"]
+        time = 1200
+        expected_time_segment_to_be_found = 1
+
+        time_intervals_instance = TimeIntervalHandler(time_interval,True)
+        time_segment_found = time_intervals_instance.find_time_segment(time)
+
+        self.assertEqual(expected_time_segment_to_be_found,time_segment_found)
