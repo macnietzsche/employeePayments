@@ -8,13 +8,13 @@
   {
     "start_time": 901,
     "end_time": 1800,
-    "weekdays_payment": 15,
+    "weekday_payment": 15,
     "weekend_payment": 20
   },
   {
     "start_time": 1801,
     "end_time": 2400,
-    "weekdays_payment": 20,
+    "weekday_payment": 20,
     "weekend_payment": 25
   }
 ]
