@@ -1,6 +1,6 @@
 from json import load as json_load
 from unittest import TestCase;
-from services.payment_handler import PaymentHandler
+from subdomains.payment_handler import PaymentHandler
 
 with open("test/input_files/payment_settings_test.json") as file:
         payment_settings_data = json_load(file)
