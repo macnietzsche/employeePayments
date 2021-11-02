@@ -13,13 +13,13 @@ class TestPaymentHandler(TestCase):
         self.payment_handler_instance = PaymentHandler(payment_settings_data)
 
     def test_calculate_payment_amount(self):
-        worked_days_summary = worked_days_summaries['summary_case1']
+        worked_days_summary = worked_days_summaries[0]['value']
         expected_payment_amount = 215.0
         payment_amount = self.payment_handler_instance.calculate_payment_amount(worked_days_summary)
 
         self.assertEqual(expected_payment_amount,payment_amount)
 
-        worked_days_summary = worked_days_summaries['summary_case2']
+        worked_days_summary = worked_days_summaries[1]['value']
         expected_payment_amount = 85.0
         payment_amount = self.payment_handler_instance.calculate_payment_amount(worked_days_summary)
 

@@ -1,14 +1,14 @@
 from services.time_interval_handler import TimeIntervalHandler, START_TIME_KEY, END_TIME_KEY
 class InputHandler():
     def __init__(self, plain_text_line) -> None:
-        self.validated_input_line = plain_text_line
+        self.normalized_input = plain_text_line
 
     @property
-    def validated_input_line(self):
-        return self._validated_input_line
+    def normalized_input(self):
+        return self._normalized_input
     
-    @validated_input_line.setter
-    def validated_input_line(self, plain_text_line):
+    @normalized_input.setter
+    def normalized_input(self, plain_text_line):
         clean_line = plain_text_line.replace(" ","").replace("\n","").replace(":","")
         head_body = clean_line.split("=")
 
@@ -40,4 +40,4 @@ class InputHandler():
             if not time_interval_handler.get_day_type(day):
                 raise Exception("Day key is not valid")
            
-        self._validated_input_line = None
+        self._normalized_input = None

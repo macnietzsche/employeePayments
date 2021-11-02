@@ -1,54 +1,60 @@
-{
-  "summary_case1": {
-    "MO": [
-      {
-        "start_time": 1000,
-        "end_time": 1200
-      }
-    ],
-    "TU": [
-      {
-        "start_time": 1000,
-        "end_time": 1200
-      }
-    ],
-    "TH": [
-      {
-        "start_time": 100,
-        "end_time": 300
-      }
-    ],
-    "SA": [
-      {
-        "start_time": 1400,
-        "end_time": 1800
-      }
-    ],
-    "SU": [
-      {
-        "start_time": 2000,
-        "end_time": 2100
-      }
-    ]
+[
+  {
+    "label": "RENE",
+    "value": {
+      "MO": [
+        {
+          "start_time": 1000,
+          "end_time": 1200
+        }
+      ],
+      "TU": [
+        {
+          "start_time": 1000,
+          "end_time": 1200
+        }
+      ],
+      "TH": [
+        {
+          "start_time": 100,
+          "end_time": 300
+        }
+      ],
+      "SA": [
+        {
+          "start_time": 1400,
+          "end_time": 1800
+        }
+      ],
+      "SU": [
+        {
+          "start_time": 2000,
+          "end_time": 2100
+        }
+      ]
+    }
   },
-  "summary_case2": {
-    "MO": [
-      {
-        "start_time": 1000,
-        "end_time": 1200
-      }
-    ],
-    "TH": [
-      {
-        "start_time": 1200,
-        "end_time": 1400
-      }
-    ],
-    "SU": [
-      {
-        "start_time": 2000,
-        "end_time": 2100
-      }
-    ]
+  {
+    "label": "ASTRID",
+    "value": {
+      "MO": [
+        {
+          "start_time": 1000,
+          "end_time": 1200
+        }
+      ],
+      "TH": [
+        {
+          "start_time": 1200,
+          "end_time": 1400
+        }
+      ],
+      "SU": [
+        {
+          "start_time": 2000,
+          "end_time": 2100
+        }
+      ]
+    }
   }
-}
+]
