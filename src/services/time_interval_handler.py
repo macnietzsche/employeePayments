@@ -22,8 +22,12 @@ class TimeIntervalHandler():
         if not time_intervals: return
         validated_settings = []
         for setting in time_intervals:
-            start_time = setting[START_TIME_KEY]   
-            end_time = setting[END_TIME_KEY]
+            try:
+                start_time = int(setting[START_TIME_KEY])
+                end_time = int(setting[END_TIME_KEY])
+            except:
+                raise Exception("Start and end time values must be numeric")
+
             if not (self.is_time_value_valid(start_time) and self.is_time_value_valid(end_time)):
                 raise Exception("Time value is not valid")
 

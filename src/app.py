@@ -9,7 +9,13 @@ if __name__ == '__main__':
     with open("test/input_files/worked_days_summaries_test.json") as file:
         worked_days_summaries = json_load(file)
 
-    example = InputHandler("hello")
+    incorrect_inputs=[]
+    file = open("test/input_files/incorrect_input_test.txt", "r")
+    for line in file:
+        incorrect_inputs.append(line)
+
+    input = incorrect_inputs[3]
+    example = InputHandler(input)
 
     summary = worked_days_summaries['summary_case1'];
     payment_service =PaymentHandler(payment_settings_data)
