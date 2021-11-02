@@ -1,0 +1,20 @@
+[
+  {
+    "start_time": 1,
+    "end_time": 900,
+    "weekday_payment": 25,
+    "weekend_payment": 30
+  },
+  {
+    "start_time": 901,
+    "end_time": 1800,
+    "weekday_payment": 15,
+    "weekend_payment": 20
+  },
+  {
+    "start_time": 1801,
+    "end_time": 2400,
+    "weekday_payment": 20,
+    "weekend_payment": 25
+  }
+]
