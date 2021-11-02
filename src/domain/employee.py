@@ -9,6 +9,7 @@ class Employee():
     def __init__(self, name, worked_days_summary):
         self.name = name
         self.worked_days_summary = worked_days_summary
+        # This is a singleton instance
         self.payment_handler_service = PaymentHandler(payment_settings_data)
 
     def calculate_amount_to_be_paid(self):
