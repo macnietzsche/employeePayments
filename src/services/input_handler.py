@@ -18,7 +18,6 @@ class InputHandler():
         head = head_body[0]
         body = head_body[1]
 
-        
         raw_day_summaries = body.split(",")
         if not len(raw_day_summaries)>0:
             raise Exception("Body must contain at least one day summary")
@@ -32,9 +31,15 @@ class InputHandler():
             if not len(start_end_time_values)==2:
                 raise Exception("There must be only start and end time values")
 
+            try:
+                start_time = int(start_end_time_values[0])
+                end_time = int(start_end_time_values[1])
+            except:
+                raise Exception("Start and end time values must be numeric")
+
             day_summary = {
-                START_TIME_KEY: start_end_time_values[0],
-                END_TIME_KEY: start_end_time_values[1]
+                START_TIME_KEY: start_time,
+                END_TIME_KEY: end_time
             }
 
             time_interval_handler = TimeIntervalHandler([day_summary])

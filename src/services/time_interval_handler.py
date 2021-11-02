@@ -22,12 +22,8 @@ class TimeIntervalHandler():
         if not time_intervals: return
         validated_settings = []
         for setting in time_intervals:
-            try:
-                start_time = int(setting[START_TIME_KEY])
-                end_time = int(setting[END_TIME_KEY])
-            except:
-                raise Exception("Start and end time values must be numeric")
-
+            start_time = setting[START_TIME_KEY]
+            end_time = setting[END_TIME_KEY]
             if not (self.is_time_value_valid(start_time) and self.is_time_value_valid(end_time)):
                 raise Exception("Time value is not valid")
 
@@ -41,8 +37,6 @@ class TimeIntervalHandler():
                 if not (end_time<sorted_start_time or start_time>sorted_end_time):
                     raise Exception('No overlapping time segments are allowed.')
 
-            setting[START_TIME_KEY] = start_time
-            setting[END_TIME_KEY] = end_time
             validated_settings.append(setting)
 
         sorted_settings = sorted(validated_settings,key=lambda item: item[START_TIME_KEY])
@@ -76,6 +70,9 @@ class TimeIntervalHandler():
         return result
 
     def is_time_value_valid(self, time):
+        if not isinstance(time,int):
+            return False
+
         hours=time//100
         minutes=time%100
 
