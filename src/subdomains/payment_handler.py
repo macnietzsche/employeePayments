@@ -1,8 +1,10 @@
 from services.time_interval_handler import TimeIntervalHandler, START_TIME_KEY, END_TIME_KEY
+from common.singleton_metaclass import SingletonMetaClass
 
 WEEKEND_PAYMENT_VALUE_KEY = 'weekend_payment'
 WEEKDAY_PAYMENT_VALUE_KEY = 'weekday_payment'
-class PaymentHandler():
+
+class PaymentHandler(metaclass = SingletonMetaClass):
     def __init__(self,settings) -> None:
         self.time_interval_handler = TimeIntervalHandler(settings,True)
 
