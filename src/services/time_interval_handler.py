@@ -4,6 +4,10 @@ MIN_TIME = 1
 MAX_TIME = 2400
 START_TIME_KEY = 'start_time'
 END_TIME_KEY = 'end_time'
+DAY_TYPES = {
+    'weekday': ['MO','TU','WE','TH','FR'],
+    'weekend': ['SA', 'SU']
+}
 class TimeIntervalHandler():
     def __init__(self,time_intervals = None, segments_must_be_continuous = False):
         self.segments_must_be_continuous = segments_must_be_continuous
@@ -94,3 +98,11 @@ class TimeIntervalHandler():
             hour_diff-=1
 
         return hour_diff+min_diff/60
+
+    def get_day_type(self, day_key):
+        if day_key in DAY_TYPES['weekday']:
+            return "weekday"
+        elif day_key in DAY_TYPES['weekend']:
+            return "weekend"
+        else:
+            return None

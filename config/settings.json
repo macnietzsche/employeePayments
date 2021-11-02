@@ -1,22 +1,22 @@
 {
-  "payment_config": [
+  "PAYMENT_CONFIG": [
     {
       "start_time": 1,
       "end_time": 900,
-      "payment_amount_on_weekdays": 25,
-      "payment_amount_on_weekends": 30
+      "weekday_payment": 25,
+      "weekend_payment": 30
     },
     {
       "start_time": 901,
       "end_time": 1800,
-      "payment_amount_on_weekdays": 15,
-      "payment_amount_on_weekends": 20
+      "weekday_payment": 15,
+      "weekend_payment": 20
     },
     {
       "start_time": 1801,
       "end_time": 2400,
-      "payment_amount_on_weekdays": 20,
-      "payment_amount_on_weekends": 25
+      "weekday_payment": 20,
+      "weekend_payment": 25
     }
   ]
 }
