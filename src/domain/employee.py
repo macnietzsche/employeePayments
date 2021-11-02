@@ -15,5 +15,6 @@ class Employee():
     def calculate_amount_to_be_paid(self):
         return self.payment_handler_service.calculate_payment_amount(self.worked_days_summary)
 
-    def print_payment_receipt(self):
-        print(f"The amount to pay {self.name} is: {self.calculate_amount_to_be_paid()}")
+    def payment_receipt(self):
+        formatted_currency = "{:.2f}".format(self.calculate_amount_to_be_paid())
+        return f"The amount to pay {self.name} is: {formatted_currency} USD"
