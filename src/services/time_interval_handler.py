@@ -41,6 +41,8 @@ class TimeIntervalHandler():
                 if not (end_time<sorted_start_time or start_time>sorted_end_time):
                     raise Exception('No overlapping time segments are allowed.')
 
+            setting[START_TIME_KEY] = start_time
+            setting[END_TIME_KEY] = end_time
             validated_settings.append(setting)
 
         sorted_settings = sorted(validated_settings,key=lambda item: item[START_TIME_KEY])

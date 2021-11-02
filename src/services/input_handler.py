@@ -23,6 +23,7 @@ class InputHandler():
         if not len(raw_day_summaries)>0:
             raise Exception("Body must contain at least one day summary")
         
+        day_summaries = {}
         for raw_day_summary in raw_day_summaries:
             day = raw_day_summary[:2]
             time_data = raw_day_summary[2:]
@@ -39,5 +40,10 @@ class InputHandler():
             time_interval_handler = TimeIntervalHandler([day_summary])
             if not time_interval_handler.get_day_type(day):
                 raise Exception("Day key is not valid")
+
+            day_summaries[day] = time_interval_handler.validated_time_intervals
            
-        self._normalized_input = None
+        self._normalized_input = {
+            'label': head,
+            'value': day_summaries
+        }
