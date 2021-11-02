@@ -12,6 +12,15 @@ class TestPaymentHandler(TestCase):
     def setUp(self) -> None:
         self.payment_handler_instance = PaymentHandler(payment_settings_data)
 
+    def test_singleton_pattern(self):
+        instance1 = PaymentHandler(payment_settings_data)
+        instance2 = PaymentHandler(payment_settings_data)
+        instance3 = PaymentHandler(payment_settings_data)
+
+        self.assertEqual(instance1,instance2)
+        self.assertEqual(instance1,instance3)
+        self.assertEqual(instance2,instance3)
+
     def test_calculate_payment_amount(self):
         worked_days_summary = worked_days_summaries[0]['value']
         expected_payment_amount = 215.0
