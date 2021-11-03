@@ -84,7 +84,7 @@ This service main features are to:
 This sub-domain was built using the Singleton pattern since payment settings are static. Therefore, this domain is responsible of calculating the payment amount that the employee is to be given based on the payment settings and the employee worked-day summary to be fed by the Employee domain.
 
 ### Employee
-At the moment, this domain contains with the employee's name and his worked-day summary. In this way, it gets the amount the employee is to be paid using the Singleton instance of Payment Handler. Finally, it decorate the final result so that the output is similar to: ```The amount to pay RENE is: 215.00 USD```
+At the moment, this domain contains with the employee's name and his worked-day summary. In this way, it gets the amount the employee is to be paid using the Singleton instance of Payment Handler. Finally, it decorates the final result so that the output is similar to: ```The amount to pay RENE is: 215.00 USD```
 
 ## Testing
 ### Run the tests
