@@ -39,13 +39,52 @@ The following chart shows the basic the behavior of the application.
 <img src="employeePaymentsFlow.png" width='700'>
 </p>
 
-### Payment Handler
+### Input handler
+This service is responsible of pre-processing the data to be sent to Time Interval handler. Its key feautures are:
+- Validate correct input format
+- Struct and normalize data. For example, input ```ASTRID=MO10:00-12:00,TH12:00-14:00,SU20:00-21:00``` normalizes to: 
+```json
+{
+    "label": "ASTRID",
+    "value": {
+      "MO": [
+        {
+          "start_time": 1000,
+          "end_time": 1200
+        }
+      ],
+      "TH": [
+        {
+          "start_time": 1200,
+          "end_time": 1400
+        }
+      ],
+      "SU": [
+        {
+          "start_time": 2000,
+          "end_time": 2100
+        }
+      ]
+    }
+  }
+  ```
+
 
 ### TIme Interval Handler
+This services handles time intervals seen both in ```employees_input.txt``` and ```config/payment_settings.json```.
+This service main features are to:
+- Check that time segments do  not overlap
+- Optionally, check that time segments fill all day
+- Arrange time segments in ascending order
+- Check if day acronym is valid.
+- Find the index of time segment that input time value belongs to.
+- Calculate time difference in hours
 
-### Input handler
+### Payment Handler
+This sub-domain was built using the Singleton pattern since payment settings are static. Therefore, this domain is responsible of calculating the payment amount that the employee is to be given based on the payment settings and the employee worked-day summary to be fed by the Employee domain.
 
-
+### Employee
+At the moment, this domain contains with the employee's name and his worked-day summary. In this way, it gets the amount the employee is to be paid using the Singleton instance of Payment Handler. Finally, it decorate the final result so that the output is similar to: ```The amount to pay RENE is: 215.00 USD```
 
 ## Testing
 ### Run the tests
