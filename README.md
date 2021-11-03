@@ -1,5 +1,5 @@
 # ACME - Salary calculation
-ACME has decided to develop an application to calculate the amount in USD to pay an employee, based on the quantity of hours and the time they worked. Therefore, the hour fee is calculated based in the table below:
+ACME has decided to develop an application to calculate the amount in USD to pay an employee, based on the quantity of hours and the time segment they worked in. Therefore, the hour fee is calculated based in the table below:
 
 | Time segments \ Day (Acronym)         | Monday (MO) | Tuesday (TU)  | Wednesday (WE)  | Thursday (TH) | Friday (FR) | Saturday (SA) | Sunday (SU) |
 | :----:                | :----:      | :----:        | :----:          | :----:        | :----:      | :----:        | :----:      |
@@ -18,12 +18,12 @@ Input sample format: ```ASTRID=MO10:00-12:00,TH12:00-14:00,SU20:00-21:00```
 Make sure you:
 - Include a name
 - Separate name and body with ```=```
-- Include at least one day in the body. Use ```,``` to separate each day
+- Include at least one worked-day summary in the body. Use ```,``` to separate each day
 - Take day acronyms from the table above.
 - Separate start and end time values with ```-```
 - Insert valid time values: ```from 00:01 to 24:00```
 
-To run the aplication, execute this in your terminal:
+Run the application:
 
 ```console
 $ python src/app.py
@@ -34,7 +34,7 @@ At the moment, payment fees are calculated based in the table at the top. If the
 
 Make sure that time segments:
 - Do not overlap.
-- Fill all day without leaving time gaps. Must fill ```from 00:01 to 24:00```
+- Fill all-day time without leaving time gaps. Must fill ```from 00:01 to 24:00```
 - Have valid time values
 - Have parameters ```"weekday_payment"``` and ```"weekend_payment"```
 
@@ -65,7 +65,7 @@ This way, the settings file should look like this:
 ```
 
 ## Structure Overview
-The following chart shows the basic the behavior of the application.
+The following chart shows the basic behavior of the application.
 <p align="center">
 <img src="employeePaymentsFlow.png" width='700'>
 </p>
@@ -103,7 +103,7 @@ This service is responsible of pre-processing the data to be sent to Time Interv
 
 ### TIme Interval Handler
 This services handles time intervals seen both in ```employees_input.txt``` and ```config/payment_settings.json```.
-This service main features are to:
+This service's main features are to:
 - Check that time segments do  not overlap
 - Optionally, check that time segments fill all day
 - Arrange time segments in ascending order
@@ -115,10 +115,14 @@ This service main features are to:
 This sub-domain was built using the Singleton pattern since payment settings are static. Therefore, this domain is responsible of calculating the payment amount that the employee is to be given based on the payment settings and the employee worked-day summary to be fed by the Employee domain.
 
 ### Employee
-At the moment, this domain contains with the employee's name and his worked-day summary. In this way, it gets the amount the employee is to be paid using the Singleton instance of Payment Handler. Finally, it decorates the final result so that the output is similar to: ```The amount to pay RENE is: 215.00 USD```
+At the moment, this domain contains the employee's name and his worked-day summary. In this way, it gets the amount the employee is to be paid using the Singleton instance of Payment Handler. Finally, it decorates the final result so that the output is similar to: 
+
+```console
+The amount to pay RENE is: 215.00 USD
+```
 
 ## Testing
-### Run the tests
+### Run all tests
 ```console
 $ python -m pytest
 ```
