@@ -23,7 +23,11 @@ Make sure you:
 - Separate start and end time values with ```-```
 - Insert valid time values: ```from 00:01 to 24:00```
 
-To run the aplication, execute this in your terminal: ```$ python src/app.py```
+To run the aplication, execute this in your terminal:
+
+```console
+$ python src/app.py
+```
 
 ## For administrators
 At the moment, payment fees are calculated based in the table at the top. If these rules are changed, please refer to ```config/payment_settings.json``` and update the JSON file according to the new rules.
@@ -32,6 +36,33 @@ Make sure that time segments:
 - Do not overlap.
 - Fill all day without leaving time gaps. Must fill ```from 00:01 to 24:00```
 - Have valid time values
+- Have parameters ```"weekday_payment"``` and ```"weekend_payment"```
+
+This way, the settings file should look like this:
+
+```json
+[
+  {
+    "start_time": 1,
+    "end_time": 900,
+    "weekday_payment": 25,
+    "weekend_payment": 30
+  },
+  {
+    "start_time": 901,
+    "end_time": 1800,
+    "weekday_payment": 15,
+    "weekend_payment": 20
+  },
+  {
+    "start_time": 1801,
+    "end_time": 2400,
+    "weekday_payment": 20,
+    "weekend_payment": 25
+  }
+]
+
+```
 
 ## Structure Overview
 The following chart shows the basic the behavior of the application.
